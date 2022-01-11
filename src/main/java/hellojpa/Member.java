@@ -25,4 +25,14 @@ public class Member {
     public void setName(String name) {
         this.name = name;
     }
+
+    // 기본 생성자가 있어야함
+    public Member() {
+
+    }
+
+    public Member(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

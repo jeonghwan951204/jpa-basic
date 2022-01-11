@@ -1,7 +1,10 @@
 package hellojpa;
 
-import javax.persistence.*;
-import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 
 public class JpaMain {
     public static void main(String[] args) {
@@ -37,12 +40,42 @@ public class JpaMain {
              * findMember.setName("HelloJPA");
              */
 
-            List<Member> result = em.createQuery("select m from member as m",Member.class)
+            /*List<Member> result = em.createQuery("select m from member as m",Member.class)
                     .setFirstResult(5)
                     .setMaxResults(8)
                     .getResultList();
 
-            result.forEach(v -> System.out.println("Member.name = " + v.getName()));
+            result.forEach(v -> System.out.println("Member.name = " + v.getName()));*/
+
+//
+//            Member a = em.find(Member.class, 1L);
+//            Member b = em.find(Member.class, 1l);
+//
+//            // true
+//            System.out.println("result = " + (a == b));
+
+            // 이렇게 쌓아놓고 한번에 보낼 수 있음
+/*
+            Member member1 = new Member(150L, "A");
+            Member member2 = new Member(160L, "B");
+
+            em.persist(member1);
+            em.persist(member2);
+
+            System.out.println("============");
+*/
+
+           /* Member member = em.find(Member.class, 1L);
+            member.setName("zzzz");
+
+            //em.persist(member);
+            // persist를 하지 않아도 변경 update 쿼리가 나감*/
+
+
+
+
+
+
 
 
 
